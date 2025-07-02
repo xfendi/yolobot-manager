@@ -14,7 +14,6 @@ const { getLicenseEmoji } = require("../../lib/getLicenseEmoji");
 const licenseTypes = [
   { label: "Premium", value: "premium" },
   { label: "Standard", value: "standard" },
-  { label: "Beta", value: "beta" },
   { label: "Partnerships", value: "partnerships" },
 ];
 
