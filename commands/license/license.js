@@ -245,20 +245,14 @@ module.exports = {
           .setTitle("Licenses")
           .setDescription(`Here are all licenses of type ${selectedType}:`)
           .setFields(
-            licenses.map((license) => {
-              const guild = client.guilds.cache.get(license.guildId);
-
-              return {
-                name: license.code,
-                value: `${
-                  license.realized
-                    ? "<a:YES:1389859682935373866>"
-                    : "<a:NO:1389859658570793002>"
-                }︲${guild ? `\`${guild.name}\`︲` : ""}${getLicenseEmoji(
-                  license.type
-                )}`,
-              };
-            })
+            licenses.map((license) => ({
+              name: license.code,
+              value: `${
+                license.realized
+                  ? "<a:YES:1389859682935373866>"
+                  : "<a:NO:1389859658570793002>"
+              }︲${`\`${license.guildId}\``}︲${getLicenseEmoji(license.type)}`,
+            }))
           )
           .setFooter({ text: mConfig.footerText })
           .setTimestamp();
