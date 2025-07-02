@@ -251,7 +251,9 @@ module.exports = {
                 license.realized
                   ? "<a:YES:1389859682935373866>"
                   : "<a:NO:1389859658570793002>"
-              }︲${`\`${license.guildId}\``}︲${getLicenseEmoji(license.type)}`,
+              }︲${`${
+                license.realized ? `\`${license.guildId}\`︲` : ""
+              }`}${getLicenseEmoji(license.type)}`,
             }))
           )
           .setFooter({ text: mConfig.footerText })
@@ -264,8 +266,17 @@ module.exports = {
         });
       });
 
-      collector.on("end", () => {
-        interaction.editReply({ components: [] });
+      collector.on("end", (collected) => {
+        if (collected.size === 0) {
+          interaction.editReply({
+            content: "`⏰` You didn't select any license type in time",
+            components: [],
+            embeds: [],
+            ephemeral: true,
+          });
+        } else {
+          interaction.editReply({ components: [] });
+        }
       });
     } else {
       interaction.reply({
