@@ -1,0 +1,10 @@
+{
+  "allowedGuilds": ["1389416877423595540", "1237837714649518141"],
+  "allowedChannels": ["1389819851148627998"],
+  "devMode": true,
+
+  "websiteURL": "https://yolobot.xyz",
+  "supportServerURL": "https://discord.gg/CCSvMsBHrD",
+
+  "licenseChannelId": "1389819851148627998"
+}

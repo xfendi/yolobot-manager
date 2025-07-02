@@ -1,0 +1,20 @@
+{
+  "name": "yolobot-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.0.1",
+    "mongoose": "^8.16.1",
+    "nodemon": "^3.1.10"
+  }
+}
