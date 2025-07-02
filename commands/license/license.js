@@ -15,6 +15,7 @@ const licenseTypes = [
   { label: "Premium", value: "premium" },
   { label: "Standard", value: "standard" },
   { label: "Beta", value: "beta" },
+  { label: "Partnerships", value: "partnerships" },
 ];
 
 module.exports = {
@@ -231,9 +232,7 @@ module.exports = {
               new EmbedBuilder()
                 .setColor(mConfig.embedColorPrimary)
                 .setTitle("No licenses found")
-                .setDescription(
-                  `There are no licenses of type ${selectedType}`
-                )
+                .setDescription(`There are no licenses of type ${selectedType}`)
                 .setFooter({ text: mConfig.footerText })
                 .setTimestamp(),
             ],
